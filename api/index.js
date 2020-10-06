@@ -30,6 +30,7 @@ module.exports = async (req, res) => {
     cache_seconds,
     custom_title,
     locale,
+    bg_image,
   } = req.query;
   let stats;
 

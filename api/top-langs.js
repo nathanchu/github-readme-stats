@@ -28,6 +28,7 @@ module.exports = async (req, res) => {
     exclude_repo,
     custom_title,
     locale,
+    bg_image,
   } = req.query;
   let topLangs;
 

@@ -24,6 +24,7 @@ module.exports = async (req, res) => {
     hide_progress,
     custom_title,
     locale,
+    bg_image,
   } = req.query;
 
   res.setHeader("Content-Type", "image/svg+xml");

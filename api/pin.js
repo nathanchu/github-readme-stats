@@ -23,6 +23,7 @@ module.exports = async (req, res) => {
     show_owner,
     cache_seconds,
     locale,
+    bg_image,
   } = req.query;
 
   let repoData;
