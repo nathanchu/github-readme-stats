@@ -69,6 +69,7 @@ module.exports = async (req, res) => {
         theme,
         layout,
         locale: locale ? locale.toLowerCase() : null,
+        bg_image,
       }),
     );
   } catch (err) {

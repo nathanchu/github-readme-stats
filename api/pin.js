@@ -71,6 +71,7 @@ module.exports = async (req, res) => {
         theme,
         show_owner: parseBoolean(show_owner),
         locale: locale ? locale.toLowerCase() : null,
+        bg_image,
       }),
     );
   } catch (err) {

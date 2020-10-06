@@ -60,6 +60,7 @@ module.exports = async (req, res) => {
         theme,
         hide_progress,
         locale: locale ? locale.toLowerCase() : null,
+        bg_image,
       }),
     );
   } catch (err) {

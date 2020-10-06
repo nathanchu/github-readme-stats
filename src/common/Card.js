@@ -90,8 +90,8 @@ class Card {
     `;
   }
 
-  renderGradient() {
-    if (typeof this.colors.bgColor !== "object") return;
+  renderDefs() {
+    if (typeof this.colors.bgColor !== "object" && !this.colors.bgImage) return;
 
     const gradients = this.colors.bgColor.slice(1);
     return typeof this.colors.bgColor === "object"
@@ -108,7 +108,15 @@ class Card {
           </linearGradient>
         </defs>
         `
-      : "";
+      : this.colors.bgImage
+        ? `
+        <defs>
+          <pattern id="image" patternUnits="userSpaceOnUse" width="${this.width}" height="${this.height}">
+            <image href="${this.colors.bgImage}" x="0" y="0" width="100" height="100" />
+          </pattern>
+        </defs>
+        `
+        : "";
   }
 
   render(body) {
@@ -135,7 +143,7 @@ class Card {
           }
         </style>
 
-        ${this.renderGradient()}
+        ${this.renderDefs()}
 
         <rect
           data-testid="card-bg"
@@ -148,7 +156,9 @@ class Card {
           fill="${
             typeof this.colors.bgColor === "object"
               ? "url(#gradient)"
-              : this.colors.bgColor
+              : this.colors.bgImage
+                ? "url(#image)"
+                : this.colors.bgColor
           }"
           stroke-opacity="${this.hideBorder ? 0 : 1}"
         />

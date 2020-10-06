@@ -73,6 +73,7 @@ const renderTopLanguages = (topLangs, options = {}) => {
     layout,
     custom_title,
     locale,
+    bg_image,
   } = options;
 
   const i18n = new I18n({
@@ -109,6 +110,8 @@ const renderTopLanguages = (topLangs, options = {}) => {
     bg_color,
     theme,
   });
+
+  const bgImage = bg_image ? encodeURI(bg_image) : null
 
   let width = isNaN(card_width) ? 300 : card_width;
   let height = 45 + (langs.length + 1) * 40;
@@ -187,6 +190,7 @@ const renderTopLanguages = (topLangs, options = {}) => {
       titleColor,
       textColor,
       bgColor,
+      bgImage,
     },
   });
 

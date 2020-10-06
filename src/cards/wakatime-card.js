@@ -63,6 +63,7 @@ const renderWakatimeCard = (stats = {}, options = { hide: [] }) => {
     hide_progress,
     custom_title,
     locale,
+    bg_image
   } = options;
 
   const i18n = new I18n({
@@ -80,6 +81,8 @@ const renderWakatimeCard = (stats = {}, options = { hide: [] }) => {
     bg_color,
     theme,
   });
+
+  const bgImage = bg_image ? encodeURI(bg_image) : null
 
   const statItems = languages
     ? languages
@@ -117,6 +120,7 @@ const renderWakatimeCard = (stats = {}, options = { hide: [] }) => {
       textColor,
       iconColor,
       bgColor,
+      bgImage,
     },
   });
 

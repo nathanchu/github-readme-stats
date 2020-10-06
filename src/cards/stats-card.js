@@ -64,6 +64,7 @@ const renderStatsCard = (stats = {}, options = { hide: [] }) => {
     theme = "default",
     custom_title,
     locale,
+    bg_image,
   } = options;
 
   const lheight = parseInt(line_height, 10);
@@ -76,6 +77,8 @@ const renderStatsCard = (stats = {}, options = { hide: [] }) => {
     bg_color,
     theme,
   });
+
+  const bgImage = bg_image ? encodeURI(bg_image) : null
 
   const apostrophe = ["x", "s"].includes(name.slice(-1)) ? "" : "s";
   const i18n = new I18n({
@@ -183,6 +186,7 @@ const renderStatsCard = (stats = {}, options = { hide: [] }) => {
       textColor,
       iconColor,
       bgColor,
+      bgImage,
     },
   });
 

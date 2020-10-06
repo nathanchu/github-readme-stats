@@ -31,6 +31,7 @@ const renderRepoCard = (repo, options = {}) => {
     show_owner,
     theme = "default_repocard",
     locale,
+    bg_image,
   } = options;
 
   const header = show_owner ? nameWithOwner : name;
@@ -66,6 +67,8 @@ const renderRepoCard = (repo, options = {}) => {
     bg_color,
     theme,
   });
+
+  const bgImage = bg_image ? encodeURI(bg_image) : null
 
   const totalStars = kFormatter(stargazers.totalCount);
   const totalForks = kFormatter(forkCount);
@@ -123,6 +126,7 @@ const renderRepoCard = (repo, options = {}) => {
       textColor,
       iconColor,
       bgColor,
+      bgImage,
     },
   });
 
