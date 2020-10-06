@@ -112,7 +112,7 @@ class Card {
         ? `
         <defs>
           <pattern id="image" patternUnits="userSpaceOnUse" width="${this.width}" height="${this.height}">
-            <image href="${this.colors.bgImage}" x="0" y="0" width="100" height="100" />
+            <image href="${this.colors.bgImage}" x="0" y="0" width="${this.width}" height="${this.height}" />
           </pattern>
         </defs>
         `
