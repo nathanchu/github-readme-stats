@@ -1,5 +1,6 @@
 const { FlexLayout, encodeHTML } = require("../common/utils");
 const { getAnimations } = require("../getStyles");
+const font = require('./roboto')
 
 class Card {
   constructor({
@@ -96,17 +97,15 @@ class Card {
     const gradients = this.colors.bgColor.slice(1);
     return typeof this.colors.bgColor === "object"
       ? `
-        <defs>
-          <linearGradient
-            id="gradient" 
-            gradientTransform="rotate(${this.colors.bgColor[0]})"
-          >
-            ${gradients.map((grad, index) => {
-              let offset = (index * 100) / (gradients.length - 1);
-              return `<stop offset="${offset}%" stop-color="#${grad}" />`;
-            })}
-          </linearGradient>
-        </defs>
+        <linearGradient
+          id="gradient" 
+          gradientTransform="rotate(${this.colors.bgColor[0]})"
+        >
+          ${gradients.map((grad, index) => {
+            let offset = (index * 100) / (gradients.length - 1);
+            return `<stop offset="${offset}%" stop-color="#${grad}" />`;
+          })}
+        </linearGradient>
         `
       : "";
   }
@@ -120,6 +119,11 @@ class Card {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
+        <defs>
+          ${font}
+          ${this.renderGradient()}
+        </defs>
+
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
@@ -135,8 +139,6 @@ class Card {
               : ""
           }
         </style>
-
-        ${this.renderGradient()}
 
         <rect
           data-testid="card-bg"

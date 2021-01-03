@@ -216,13 +216,13 @@ const renderStatsCard = (stats = {}, options = { hide: [] }) => {
   return card.render(`
     ${rankCircle}
 
-    <svg x="0" y="0">
+    <g x="0" y="0">
       ${FlexLayout({
         items: statItems,
         gap: lheight,
         direction: "column",
       }).join("")}
-    </svg> 
+    </g> 
   `);
 };
 
