@@ -126,7 +126,9 @@ class Card {
 
         <style>
           .header {
-            font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
+            font-weight: 600;
+            font-size: 18px;
+            font-family: url(#OpenSans-600) 'Segoe UI', Ubuntu, Sans-Serif;
             fill: ${this.colors.titleColor};
             animation: fadeInAnimation 0.8s ease-in-out forwards;
           }
