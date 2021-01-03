@@ -53,18 +53,26 @@ const getStyles = ({
 }) => {
   return `
     .stat {
-      font: 600 14px url(#Roboto), 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif; fill: ${textColor};
+      font-weight: 600;
+      font-size: 14px;
+      font-family: url(#OpenSans-600), 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif;
+      fill: ${textColor};
     }
     .stagger {
       opacity: 0;
       animation: fadeInAnimation 0.3s ease-in-out forwards;
     }
     .rank-text {
-      font: 800 24px 'Segoe UI', Ubuntu, Sans-Serif; fill: ${textColor}; 
+      font-weight: 800;
+      font-size: 24px;
+      font-family: url(#OpenSans-800) 'Segoe UI', Ubuntu, Sans-Serif; fill: ${textColor}; 
       animation: scaleInAnimation 0.3s ease-in-out forwards;
     }
     
-    .bold { font-weight: 700 }
+    .bold {
+      font-weight: 700;
+      font-family: url(#OpenSans-700) 'Segoe UI', Ubuntu, Sans-Serif;
+    }
     .icon {
       fill: ${iconColor};
       display: ${!!show_icons ? "block" : "none"};

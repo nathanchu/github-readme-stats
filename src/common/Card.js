@@ -1,6 +1,6 @@
 const { FlexLayout, encodeHTML } = require("../common/utils");
 const { getAnimations } = require("../getStyles");
-const font = require('./roboto')
+const font = require('./font')
 
 class Card {
   constructor({
