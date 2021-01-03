@@ -55,7 +55,7 @@ const getStyles = ({
     .stat {
       font-weight: 600;
       font-size: 14px;
-      font-family: url(#OpenSans-600), 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif;
+      font-family: OpenSans-600, 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif;
       fill: ${textColor};
     }
     .stagger {
@@ -65,13 +65,13 @@ const getStyles = ({
     .rank-text {
       font-weight: 800;
       font-size: 24px;
-      font-family: url(#OpenSans-800) 'Segoe UI', Ubuntu, Sans-Serif; fill: ${textColor}; 
+      font-family: OpenSans-800, 'Segoe UI', Ubuntu, Sans-Serif; fill: ${textColor}; 
       animation: scaleInAnimation 0.3s ease-in-out forwards;
     }
     
     .bold {
       font-weight: 700;
-      font-family: url(#OpenSans-700) 'Segoe UI', Ubuntu, Sans-Serif;
+      font-family: OpenSans-700, 'Segoe UI', Ubuntu, Sans-Serif;
     }
     .icon {
       fill: ${iconColor};
